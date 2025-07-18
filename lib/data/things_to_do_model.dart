@@ -1,31 +1,31 @@
-class HotelsModel {
+class ThingsToDoModel {
   final String imageUrl;
-  final String hotelName;
+  final String name;
   final double ratings;
   final int raters;
   final String description;
 
-  HotelsModel({
+  ThingsToDoModel({
     required this.imageUrl,
-    required this.hotelName,
+    required this.name,
     required this.ratings,
     required this.raters,
     required this.description,
   });
 
-  factory HotelsModel.fromJson(Map<String, dynamic> json) {
-    return HotelsModel(
+  factory ThingsToDoModel.fromJson(Map<String, dynamic> json) {
+    return ThingsToDoModel(
       imageUrl: json['imageUrl'],
-      hotelName: json['hotelName'],
+      name: json['name'],
       ratings: json['ratings'],
       raters: json['raters'],
       description: json['description'],
     );
   }
-
   @override
   String toString() {
     // TODO: implement toString
-    return "imageurl:$imageUrl,hotelname:$hotelName,ratings:$ratings,raters:$raters,description:$description";
+       return "imageurl:$imageUrl, name:$name,ratings:$ratings,raters:$raters,description:$description";
+    
   }
 }

@@ -2,7 +2,7 @@ import 'package:first_task/provider/favourite_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-Stack hotelsDataShowingWidgets({
+Stack thingsToDoWidget({
   required String imageUrl,
   required String hotelName,
   required double ratings,
@@ -12,7 +12,8 @@ Stack hotelsDataShowingWidgets({
   required int index,
 }) {
   bool isFavourite;
-  List favouriteList = ref.watch(favouriteProvider).favouriteIndexListOfHotel;
+  List favouriteList =
+      ref.watch(favouriteProvider).favouriteIndexListOfThingsToDo;
 
   if (favouriteList.contains(index)) {
     isFavourite = true;
@@ -22,7 +23,7 @@ Stack hotelsDataShowingWidgets({
   return Stack(
     children: [
       Container(
-        height: 500,
+        height: 600,
         width: 200,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +37,7 @@ Stack hotelsDataShowingWidgets({
                 child: Image(image: AssetImage(imageUrl), fit: BoxFit.fill),
               ),
             ),
-            Text(hotelName),
+            Text(hotelName, overflow: TextOverflow.ellipsis),
             Row(
               children: [
                 Text(ratings.toString()),
@@ -57,7 +58,7 @@ Stack hotelsDataShowingWidgets({
                 Text("(${raters.toString()})"),
               ],
             ),
-            Text(description),
+            Text(maxLines: 2, description, overflow: TextOverflow.ellipsis),
           ],
         ),
       ),
@@ -67,7 +68,7 @@ Stack hotelsDataShowingWidgets({
 
         child: InkWell(
           onTap: () {
-            ref.read(favouriteProvider).addToFavouriteHotels(index);
+            ref.read(favouriteProvider).addToFavouriteThingsToDo(index);
           },
           child: Container(
             height: 50,
