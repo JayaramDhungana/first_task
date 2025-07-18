@@ -1,4 +1,5 @@
 import 'package:first_task/provider/change_index_provider.dart';
+import 'package:first_task/screens/over_view_screen.dart';
 import 'package:first_task/widgets/tab_bar_options_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -98,7 +99,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [Text("abc"), Text("abc"), Text("abc")],
+        children: [OverViewScreen(), Text("abc"), Text("abc")],
       ),
     );
   }
