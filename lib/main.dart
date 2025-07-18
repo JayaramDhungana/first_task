@@ -20,6 +20,11 @@ class MyApp extends StatelessWidget {
           bodyLarge: TextStyle(fontSize: 18, color: Colors.white),
           bodyMedium: TextStyle(fontSize: 16, color: Colors.white),
           titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          labelLarge: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w800,
+            color: Colors.white,
+          ),
         ),
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
